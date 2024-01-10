@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 req = ''
 recursion_depth = 0
+max_limit = int(input('Enter max recursion depth ! :'))
 visited = []
 current = ''
 def scrape(url):
@@ -38,7 +39,7 @@ def scrape(url):
         except:
             pass
 
-    elif recursion_depth > 4:
+    elif recursion_depth > max_limit:
         recursion_depth = 0
         print(len(visited))
         
